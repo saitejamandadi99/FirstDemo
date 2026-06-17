@@ -1,0 +1,24 @@
+h1{
+    font-family: roboto;
+    color: red;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p{
+    font-family: Roboto;
+    color: black;
+    text-align: center;
+    text-decoration: overline;
+}
+
+button{
+    height: 36px;
+    width: 136px;
+    text-align: center;
+    border: 0px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    cursor: pointer;
+}

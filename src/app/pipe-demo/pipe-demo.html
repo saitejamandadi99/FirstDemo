@@ -1,0 +1,16 @@
+<p>pipe-demo works!</p>
+
+<p>Full Date : {{myDate}}</p>
+<p>Short Date : {{myDate | date : 'shortDate'}}</p>
+<p>Short Time :{{myDate | date:'shortTime'}} </p>
+<p>Long Time :{{myDate | date:'longTime'}} </p>
+<p>Medium Date :{{myDate | date:'mediumDate'}} </p>
+<p>Long Date :{{myDate | date:'longDate'}} </p>
+<p>Custom Date  :{{myDate | date:'dd/MM/yyyy'}} </p>
+<p>Full Date and Time : {{myDate | date:'full'}}</p>
+
+<hr />
+
+<h2>Movie Details</h2>
+<p>Date without format : {{myDate}}</p>
+<p>Tax for movie : {{movie.movieEarnings | taxPipeline : 'M'}}</p>

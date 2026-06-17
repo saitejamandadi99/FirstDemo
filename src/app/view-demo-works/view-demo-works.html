@@ -1,0 +1,40 @@
+<p>view-demo-works works!</p>
+
+<h1>&#64; ngFor Directive to display genre list</h1>
+<ul>
+    @for(genre of lstGenre; track genre.genreId; let i = $index){
+        <li>{{genre.genreId}} - {{genre.genreCode}} - {{genre.genreDesc}}</li>
+    }
+</ul>
+
+<h5>Genre List</h5>
+<table class="table table-bordered table-stripped">
+    <thead>
+        <tr>
+            <th>Genre Id</th>
+            <th>Genre Code</th>
+            <th>Genre Desc</th>
+            <th>send to child</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for(genre of lstGenre; track genre.genreId; let i = $index){
+            <tr>
+                <td>{{genre.genreId}}</td>
+                <td>{{genre.genreCode}}</td>
+                <td>{{genre.genreDesc}}</td>
+                <td><button class="btn btn-primary" (click) = "onClickSendGenreId(i)">Send Genre Id</button></td>
+            </tr>
+        }
+    </tbody>    
+    @if(!lstGenre || lstGenre.length == 0){
+    <tr>
+        <td colspan="3">No genre to display</td>
+    </tr>
+    }
+
+</table>
+
+<app-genre-demo [genreProperty]="parentGenre" (childOutputEvent) = "getDataFromChild($event)" ></app-genre-demo>
+<p>Data from child is : {{dataFromChild}}</p>

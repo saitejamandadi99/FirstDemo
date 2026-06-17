@@ -1,0 +1,74 @@
+<h1>This is the Genre Demo</h1>
+<p>genre-demo works!</p>
+
+<h3>Genre Details</h3>
+<p>Id : {{GenreId}}</p>
+<p>Code : {{GenreCode}}</p>
+<p>Description : {{GenreDesc}}</p>
+<p>Genre Details : {{GetGenreDetails()}}</p>
+
+<hr />
+
+<p class="row"></p>
+<p class="col-3">Genre Id : {{GenreId}}</p>
+<p class="col-3">Genre Code : {{GenreCode}}</p>
+<p class="col-3">Genre Desc : {{GenreDesc}}</p>
+
+<button class="btn btn-primary">Learn More</button>
+
+<hr />
+
+<h3>Genre Details using Genre Class</h3>
+<p>Genre Id: {{genreObj.genreId}}</p>
+<p>Genre Code: {{genreObj.genreCode}}</p>
+<p>Genre Desc: {{genreObj.genreDesc}}</p>
+
+<hr />
+
+<h3>Genre Details using Genre Interface</h3>
+<p>Genre Id: {{gerneInterface.genreId}}</p>
+<p>Genre Code: {{gerneInterface.genreCode}}</p>
+<p>Genre Desc: {{gerneInterface.genreDesc}}</p>
+
+<hr />
+<h3>Property Binding in angular </h3>
+GenreId : <span [innerHTML] = "GenreId" ></span> <br />
+GenreCode : <input type="text" [value] ="gerneInterface.genreCode" /><br />
+GenreDesc : <textarea  [value] ="gerneInterface.genreDesc"></textarea><br />
+<p [innerHTML] = "GetGenreDetails()"></p>
+
+<hr />
+
+<h1>Event binding in Angular</h1>
+<button class="btn btn-primary" (click) = "OnClick()">Click Me </button>
+
+<hr />
+<input type="text" (input) = 'changeValue($event)' [value] = "GenreCode" />
+
+<hr />
+
+<h1>ngModel---2 way binding---</h1>
+<input type="text" [(ngModel)] = "GenreId" />
+Current Genre Id : {{GenreId}}
+<br />
+<input type="text" [(ngModel)] = "GenreCode"/>
+Current Genre Code : {{GenreCode}}
+<br />
+
+<input type="text" [(ngModel)] = "GenreDesc" />
+Current Genre Desc : {{GenreDesc}}
+<br />
+
+<h3>ngClass - class binding</h3>
+<p class="bgAqua">this is a paragraph with class property - class is bgAqua</p>
+<p [class] = "myClass">This is a paragraph with class binding - myClass - class is bgAqua</p>
+<p [class.bgYellow] = "bgApplyClass"> this is a paragraph with class bgYellow and boolean condition</p>
+
+<h1>Genre Details</h1>
+<p>Genre Id : {{genreProperty.genreId}}</p>
+<p>Genre Code : {{genreProperty.genreCode}}</p>
+<p>Genre Desc : {{genreProperty.genreDesc}}</p>
+
+<!-- <p>Data from parent : {{_data}}</p> -->
+
+<p><button class="btn btn-info" (click) = "sendToParent()"> Send to Parent</button></p>

@@ -1,0 +1,73 @@
+<p>movie-demo works!</p>
+
+<h1>&#64; @ngFor Directive for the Movie List</h1>
+
+<h3>Displaying the IMovie list</h3>
+<ul>
+    @for(movie of lstIMovie; track movie.movieId;let i = $index){
+        <li [ngClass] = "movie.movieRating < 3 ? 'redRow' : 'greenRow'">{{movie.movieId}} - {{movie.movieName}} - {{movie.movieRating}} - {{movie.genreId}} </li>
+    }
+</ul>
+
+<hr />
+
+<h3>NgStyle demo</h3>
+<table class="table table-bordered table-stripped">
+    <thead>
+        <tr>
+
+            <th>MovieId</th>
+            <th>Movie Name</th>
+            <th>Movie Rating</th>
+            <th>Genre Id</th>
+            <th>Release Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for(movie of lstMovie; track movie.movieId; let i = $index){
+            <tr>
+                <td [ngStyle] = "{'font-size': movie.movieRating < 3 ? '40px':'20px'}">{{movie.movieId}}</td>
+                <td [ngStyle] = "{'font-size': movie.movieRating < 3 ? '40px':'20px'}">{{movie.movieName}}</td>
+                <td [ngStyle] = "{'font-size': movie.movieRating < 3 ? '40px':'20px'}">{{movie.movieRating}}</td>
+                <td [ngStyle] = "{'font-size': movie.movieRating < 3 ? '40px':'20px'}">{{movie.genreId}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h3>Displaying the list of Movie in a table</h3>
+<table class="table table-bordered table-stripped">
+    <thead>
+        <tr>
+
+            <th>MovieId</th>
+            <th>Movie Name</th>
+            <th>Movie Rating</th>
+            <th>Genre Id</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for(movie of lstMovie; track movie.movieId; let i = $index){
+            <tr>
+                <td [ngClass] = "movie.movieRating < 3 ? 'redRow' : 'greenRow'">{{movie.movieId}}</td>
+                <td [ngClass] = "movie.movieRating < 3 ? 'redRow' : 'greenRow'">{{movie.movieName}}</td>
+                <td [ngClass] = "movie.movieRating < 3 ? 'redRow' : 'greenRow'">{{movie.movieRating}}</td>
+                <td [ngClass] = "movie.movieRating < 3 ? 'redRow' : 'greenRow'">{{movie.genreId}}</td>
+                <td [ngStyle] = "{'font-size': movie.movieRating < 3 ? '40px':'20px'}">{{movie.releaseDate}}</td>
+            </tr>
+
+            
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div *ngFor="let movie of lstMovie" appAppHighlight>
+    <p>{{movie.movieId}}</p>
+    <p>{{movie.movieName}}</p>
+    <p>{{movie.movieRating}}</p>
+</div>
