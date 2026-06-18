@@ -16,11 +16,11 @@ export class MovieDemo {
   lstIMovie : IMovie[];
   lstMovie: Movie[];
   constructor(){
-    this.lstIMovie=[{movieId:1, movieName:"SpiderMan", movieRating:9, genreId:5},
-      {movieId:2, movieName:"Avengers", movieRating:9, genreId:5},
-      {movieId:3, movieName:"Titanic", movieRating:9, genreId:3},
-      {movieId:4, movieName:"Troy", movieRating:7, genreId:2},
-      {movieId:5, movieName:"SouthPaw", movieRating:6, genreId:3}
+    this.lstIMovie=[{movieId:1, movieName:"SpiderMan", movieRating:9, genreId:5, releaseDate:new Date()},
+      {movieId:2, movieName:"Avengers", movieRating:9, genreId:5, releaseDate:new Date()},
+      {movieId:3, movieName:"Titanic", movieRating:9, genreId:3, releaseDate:new Date()},
+      {movieId:4, movieName:"Troy", movieRating:7, genreId:2, releaseDate:new Date()},
+      {movieId:5, movieName:"SouthPaw", movieRating:6, genreId:3, releaseDate:new Date()}
     ]
 
     this.lstMovie=[{movieId:1, movieName:"SpiderMan", movieRating:9, genreId:5, releaseDate: new Date("25-02-2000"), movieEarnings: 2000},

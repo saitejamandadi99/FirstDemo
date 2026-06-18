@@ -1,0 +1,41 @@
+<h2>Add Movie</h2>
+
+<form [formGroup] = "movieForm" (ngSubmit) = "onSubmit()" >
+    <div class="form-group">
+        <input hidden name="movieId" id="movieId" class="form-control" formControlName ="movieId" >
+    </div>
+
+    <div class="form-group">
+        <label >Movie Name</label>
+        <input type="text" class="form-control" name="movieName" id="movieName" formControlName ="movieName" >
+        <div *ngIf="movieName.invalid && (movieName?.touched || movieName?.dirty)" class="text-danger small" >
+            movie name should be atleast 4 characters and atmost 10 characters
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label >Movie Rating</label>
+        <input type="text" class="form-control" name="movieRating" id="movieRating" formControlName ="movieRating" >
+        <div *ngIf="movieRating.hasError('min') || movieRating.hasError('max')" class="text-danger small" >
+            movie rating should between 0-10
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label >Release Date</label>
+        <input type="date" class="form-control" name="releaseDate" id="releaseDate" formControlName ="releaseDate" >
+        <div *ngIf="releaseDate.hasError('invalidReleaseYear') && (releaseDate?.touched || releaseDate?.dirty)" class="text-danger small">
+            enter the release Date after 1960
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label >Genre Id</label>
+        <input type="text" class="form-control" name="genreId" id="genreId" formControlName ="genreId" >
+        <div *ngIf="genreId.invalid && (genreId?.touched || genreId?.dirty)" class="text-danger small" >
+            Please enter the genre Id
+        </div>
+    </div>
+
+    <button class="btn btn-primary mt-1" type="submit" [disabled] = "movieForm.invalid" >Submit</button>
+</form>

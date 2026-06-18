@@ -7,10 +7,11 @@ import { MovieDemo } from './movie-demo/movie-demo';
 import { PipeDemo } from './pipe-demo/pipe-demo';
 import { RegisterDemoUser } from './register-demo-user/register-demo-user';
 import { AddGenreComponent } from './add-genre-component/add-genre-component';
+import { AddMovieComponent } from './add-movie-component/add-movie-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GenreDemo, DirectiveDemo, ViewDemoWorks, MovieDemo, PipeDemo,RegisterDemoUser, AddGenreComponent],
+  imports: [RouterOutlet, GenreDemo, DirectiveDemo, ViewDemoWorks, MovieDemo, PipeDemo,RegisterDemoUser, AddGenreComponent, AddMovieComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
