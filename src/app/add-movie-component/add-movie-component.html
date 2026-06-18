@@ -9,15 +9,25 @@
         <label >Movie Name</label>
         <input type="text" class="form-control" name="movieName" id="movieName" formControlName ="movieName" >
         <div *ngIf="movieName.invalid && (movieName?.touched || movieName?.dirty)" class="text-danger small" >
-            movie name should be atleast 4 characters and atmost 10 characters
+            <div *ngIf="movieName?.hasError('minlength')">
+                movie name should be minimum 4 characters
+            </div>
+
+            <div *ngIf="movieName?.hasError('maxlength')">
+                movie name should be maximum 10 characters
+            </div>
         </div>
     </div>
 
     <div class="form-group">
         <label >Movie Rating</label>
         <input type="text" class="form-control" name="movieRating" id="movieRating" formControlName ="movieRating" >
-        <div *ngIf="movieRating.hasError('min') || movieRating.hasError('max')" class="text-danger small" >
-            movie rating should between 0-10
+        <div *ngIf="movieRating.hasError('min')" class="text-danger small" >
+            movie rating should be above 0
+        </div>
+
+        <div *ngIf="movieRating.hasError('max')" class="text-danger small" >
+            movie rating should be less than 10
         </div>
     </div>
 
