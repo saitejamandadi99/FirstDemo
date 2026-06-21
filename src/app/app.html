@@ -1,7 +1,7 @@
 <h1>Welcome to Training Session</h1>
 <p>We are learning Angular 2 in the training</p>
 
-<button>Learn</button>
+<!-- <button>Learn</button> -->
 
 <hr />
 
@@ -12,7 +12,19 @@
  <!-- <app-pipe-demo></app-pipe-demo>  -->
 <!-- <app-register-demo-user></app-register-demo-user> -->
  <!-- <app-add-genre-component></app-add-genre-component> -->
-<app-add-movie-component></app-add-movie-component>
+<!-- <app-add-movie-component></app-add-movie-component> -->
 
+<div class="container">
+    <div class="row">
+        <a routerLink="" routerLinkActive="activeLink" class="nav-item" >Home</a>
+        <a routerLink="/genredemo" routerLinkActive="activeLink" class="nav-item" >Genre Demo</a>
+        <a routerLink="/viewdemo" routerLinkActive="activeLink" class="nav-item" >View Demo</a>
+        <a routerLink="/directivedemo" routerLinkActive="activeLink" class="nav-item" >Directive Demo</a>
+        <a routerLink="/pipedemo" routerLinkActive="activeLink" class="nav-item" >Pipe Demo</a>
+        <a routerLink="/addmovie" routerLinkActive="activeLink" class="nav-item" >Add Movie </a>
+        <a routerLink="/addgenre" routerLinkActive="activeLink" class="nav-item" >Add Genre</a>
+        
+    </div>
+</div>
 
-<router-outlet />
+<router-outlet /> 
